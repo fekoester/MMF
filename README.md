@@ -2,7 +2,7 @@
 Master Memory Function to calculate linear memory capacity of a time-delay based reservoir computer.
 ## Tutorial
 
-You will need Armadillo to compile the program.
+You will need Armadillo to compile the program. Otherwise the program uses basic C++ libraries, thus it should compile on every system.
 
 After compiling, start the program with ./nameOfProgram.
 
