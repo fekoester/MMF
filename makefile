@@ -2,10 +2,10 @@ CC = g++
 CFLAGS = -Wall
 CXXFLAGS:=-std=c++17 -g -I armadillo-9.500.2/include -I Include -I -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -lm 
 
-.PHONY: all solver clean
+.PHONY: all MMF clean
 
-solver: main.cpp
-	$(CC) $(CFLAGS) $(CXXFLAGS) main.cpp -o solver
+MMF: MMF.cpp
+	$(CC) $(CFLAGS) $(CXXFLAGS) MMF.cpp -o MMF
 
 clean:
-	rm -f solver
+	rm -f MMF
