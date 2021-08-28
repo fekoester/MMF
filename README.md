@@ -1,6 +1,6 @@
 # MMF
 Master Memory Function to calculate linear memory capacity of a time-delay based reservoir computer.
-#Tutorial
+##Tutorial
 
 You will need Armadillo to compile the program.
 After compiling, start the program with ./nameOfProgram.
