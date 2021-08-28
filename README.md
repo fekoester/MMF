@@ -15,3 +15,5 @@ You will need to specifiy the parameters of the given reservoir system via the c
  * -tauInTheta sets the delay length in number of theta intervals.
  * -regularisationParameter sets the tikhonov regularisation parameter.
  * -regularisationParameterRelative is a boolean, setting the tikhonov regularisation parameter relative to the highest value in the state matrix.
+
+One example call of the program would be "./MMF -a -0.5 -b 0.4 -N 100 -tauInTheta 141 -theta 0.5"
