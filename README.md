@@ -3,8 +3,11 @@ Master Memory Function to calculate linear memory capacity of a time-delay based
 ## Tutorial
 
 You will need Armadillo to compile the program.
+
 After compiling, start the program with ./nameOfProgram.
+
 You will need to specifiy the parameters of the given reservoir system via the corresponding flags.
+
  *-a sets the local linearization parameter a.
  *-b sets the delay linearization parameter b.
  *-theta sets the virtual node distance interval time.
