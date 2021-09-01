@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall
-CXXFLAGS:=-std=c++17 -g -I armadillo-9.500.2/include -I Include -I -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -lm 
+CXXFLAGS:=-std=c++17 -O2 -DARMA_DONT_USE_WRAPPER
 
 .PHONY: all MMF clean
 

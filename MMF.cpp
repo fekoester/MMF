@@ -6,7 +6,7 @@
 #include <chrono>
 #include <boost/math/special_functions/binomial.hpp>
 #include <boost/math/distributions/binomial.hpp>
-#include "../RC/armadillo-9.500.2/include/armadillo"
+#include <armadillo>
 
 //Struct holding all parameters for the reservoir
 struct Par{
