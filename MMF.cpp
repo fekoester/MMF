@@ -159,8 +159,15 @@ Par parsArguments(int argc, char** argv){
 			std::cout << "Set seed to " << atof(argv[i+1]) << std::endl;
 
 		}	
+		
+		if (std::string(argv[i]) == "-filename"){
+			parameters.filenameToWrite = std::string(argv[i+1]);
+			std::cout << "Set filename to " << parameters.filenameToWrite << std::endl;
+		}
 
 	}
+	
+	std::cout << "\n\n\n";
 
 	//parameters.filenameToWrite = "./data_" + std::to_string(atof(parameters.a)) + "_" + std::to_string(atof(parameters.b)) + "_" std::to_string(atof(parameters.theta)) + "_" + std::to_string(atof(parameters.N)) + "_" + std::to_string(atof(parameters.relativeThreshold)) + ".txt";
 	parameters.fileToWrite.open(parameters.filenameToWrite);
@@ -182,6 +189,8 @@ int main(int argc, char** argv)
 	}
 	matrix = arma::pinv(matrix + parameters.regularisationParameter*arma::eye<arma::mat>(parameters.N, parameters.N));
 
+	std::cout << "Steps" << "\t" << "Capacity\n";
+	parameters.fileToWrite << "Steps" << "\t" << "Capacity\n";
 	for (unsigned int l = 0; l < modifiedState.n_cols; l++){
 		std::cout << std::setprecision(14) << l << " " << getCapacity(matrix,modifiedState , l);
 		parameters.fileToWrite << l << " " << getCapacity(matrix,modifiedState ,l);
