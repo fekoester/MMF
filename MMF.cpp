@@ -10,16 +10,16 @@
 
 //Struct holding all parameters for the reservoir
 struct Par{
-	double a = -1.0;
-	double b = -1.0;
-	double theta = 1.0;
+	double a = 0.5;
+	double b = 0.4;
+	double theta = 0.5;
 	unsigned int N = 100;
-	unsigned int tauInTheta = 100;
+	unsigned int tauInTheta = 141;
 	double regularisationParameter = 1E-6;
 	bool regularisationParameterRelative = true;
 	std::vector<double> maskWeights;
 	double relativeThreshold = 1E-6;
-	std::string filenameToWrite;
+	std::string filenameToWrite = "mmf_output.txt";
 	std::ofstream fileToWrite;
 
 };
