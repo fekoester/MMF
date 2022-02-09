@@ -5,10 +5,15 @@ Master Memory Function to calculate linear memory capacity of a time-delay based
 
 ### Build with Docker
 
-Download repository and build via `docker build .`.
-Run the program via `docker run --name=mmf mmf -a -0.5 -b 0.4 -N 100 -tauInTheta 141 -theta 0.5`.
+Optionally: Download repository and build via `docker build -t rincewind1989/mmf .`.
+
+Otherwise you can use the [version from dockerhub.](https://hub.docker.com/r/rincewind1989/mmf)
+
+Run the program via `docker run --name=mmf rincewind1989/mmf -a -0.5 -b 0.4 -N 100 -tauInTheta 141 -theta 0.5`.
 For output copy the output file from the docker using `docker cp mmf:mmf_output.txt .`.
 Delete with `docker rm mmf`.
+
+
 
 ### Build Manually
 
