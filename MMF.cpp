@@ -10,7 +10,7 @@
 
 //Struct holding all parameters for the reservoir
 struct Par{
-	double a = 0.5;
+	double a = -0.5;
 	double b = 0.4;
 	double theta = 0.5;
 	unsigned int N = 100;
