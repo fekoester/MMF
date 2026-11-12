@@ -1,6 +1,5 @@
 MMF
-*.txt
-!requirements*.txt
+mmf_output.txt
 build/
 __pycache__/
 *.egg-info/
