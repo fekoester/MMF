@@ -1,0 +1,6 @@
+MMF
+mmf_output.txt
+build/
+__pycache__/
+*.egg-info/
+.pytest_cache/

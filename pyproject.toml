@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmf"
+version = "0.2.0"
+description = "Master memory function: linear memory capacity of delay-based reservoir computers"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Felix Köster"}]
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+dev = ["pytest>=7", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+include = ["mmf*"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+ignore = ["B905", "E741"]  # l and I follow the paper's notation
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
