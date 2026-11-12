@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # the v0.1 reproduction test builds the original MMF.cpp from history
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Armadillo and Boost
+        run: sudo apt-get update && sudo apt-get install -y libarmadillo-dev libboost-dev
+      - name: Build (make and CMake)
+        run: |
+          make
+          cmake -S . -B build && cmake --build build
+      - name: Install Python package
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Test (MMF vs simulation, C++ vs Python, v0.1 reproduction)
+        run: pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image and run it
+        run: |
+          docker build -t mmf .
+          docker run --rm mmf -N 30 -tauInTheta 41 | grep "Total linear memory capacity"

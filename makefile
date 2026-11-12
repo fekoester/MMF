@@ -1,11 +1,13 @@
-CC = g++
-CFLAGS = -Wall
-CXXFLAGS:=-std=c++17 -O2 
+CXX ?= g++
+CXXFLAGS ?= -std=c++17 -O2 -Wall
+LDLIBS = -larmadillo -llapack -lblas
 
-.PHONY: all MMF clean
+.PHONY: all clean
+
+all: MMF
 
 MMF: MMF.cpp
-	$(CC) $(CFLAGS) $(CXXFLAGS) MMF.cpp -o MMF -larmadillo -llapack -lblas
+	$(CXX) $(CXXFLAGS) MMF.cpp -o MMF $(LDLIBS)
 
 clean:
 	rm -f MMF
